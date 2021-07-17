@@ -40,6 +40,8 @@ bot.on('message', function (event) {
     }
 });
 
+const line = require('@line/bot-sdk');
+
 const client = new line.Client({
     channelAccessToken: '<channel access token>'
 });
