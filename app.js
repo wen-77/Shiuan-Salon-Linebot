@@ -40,77 +40,80 @@ bot.on('message', function (event) {
     }
 });
 
-const line = require('@line/bot-sdk');
+// const line = require('@line/bot-sdk');
 
-const client = new line.Client({
-    channelAccessToken: '<channel access token>'
-});
+// const client = new line.Client({
+//     channelAccessToken: '<channel access token>'
+// });
 
-async function App(context) {
-    await context.sendFlex('This is an advanced flex', {
-        type: 'bubble',
-        hero: {
-            type: 'image',
-            url: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png',
-            size: 'full',
-            aspectRatio: '20:13',
-        },
-        body: {
-            type: 'box',
-            layout: 'vertical',
-            contents: [{
-                    type: 'text',
-                    text: 'Brown Cafe',
-                    weight: 'bold',
-                    size: 'xl',
-                },
-                {
-                    type: 'box',
-                    layout: 'vertical',
-                    margin: 'lg',
-                    contents: [{
-                        type: 'box',
-                        layout: 'baseline',
-                        contents: [{
-                                type: 'text',
-                                text: 'Place',
-                                color: '#aaaaaa',
-                                size: 'sm',
-                                flex: 1,
-                            },
-                            {
-                                type: 'text',
-                                text: 'Miraina Tower, 4-1-6 Shinjuku, Tokyo',
-                                wrap: true,
-                                color: '#666666',
-                                size: 'sm',
-                                flex: 5,
-                            },
-                        ],
-                    }, ],
-                },
-            ],
-        },
-        footer: {
-            type: 'box',
-            layout: 'vertical',
-            contents: [{
-                type: 'button',
-                action: {
-                    type: 'uri',
-                    label: 'WEBSITE',
-                    uri: 'https://linecorp.com',
-                },
-            }, ],
-        },
-    });
-};
+// const message = {
+//     "type": "bubble",
+//     "hero": {
+//         "type": "image",
+//         "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+//         "size": "full",
+//         "aspectRatio": "20:13",
+//         "aspectMode": "cover",
+//         "action": {
+//             "type": "uri",
+//             "uri": "http://linecorp.com/"
+//         }
+//     },
+//     "body": {
+//         "type": "box",
+//         "layout": "vertical",
+//         "contents": [{
+//             "type": "text",
+//             "text": "Shiuan Salon",
+//             "weight": "bold",
+//             "size": "xl"
+//         }]
+//     },
+//     "footer": {
+//         "type": "box",
+//         "layout": "vertical",
+//         "spacing": "sm",
+//         "contents": [{
+//                 "type": "button",
+//                 "style": "link",
+//                 "height": "sm",
+//                 "action": {
+//                     "type": "message",
+//                     "label": "CALL",
+//                     "text": "0228160809"
+//                 }
+//             },
+//             {
+//                 "type": "button",
+//                 "style": "link",
+//                 "height": "sm",
+//                 "action": {
+//                     "type": "uri",
+//                     "label": "WEBSITE",
+//                     "uri": "https://linecorp.com"
+//                 }
+//             },
+//             {
+//                 "type": "button",
+//                 "style": "secondary",
+//                 "height": "sm",
+//                 "action": {
+//                     "type": "postback",
+//                     "label": "預約",
+//                     "data": "hello",
+//                     "displayText": "我要預約"
+//                 }
+//             }
+//         ],
+//         "flex": 0
+//     }
+// };
 
-client.pushMessage('<to>', message).then(() => {
-    console.log("success")
-}).catch((err) => {
-    console.log(err)
-});
+// client.pushMessage('<to>',message).then(() =>{
+//     console.log("success")
+// }).catch((err)=>{
+//     console.log(err)
+// });
 
 app.post('/', linebotParser);
 
