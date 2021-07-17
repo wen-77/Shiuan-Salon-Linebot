@@ -20,7 +20,13 @@ bot.on('message', function (event) {
         var msg = event.message.text;
         var replyMsg;
         if (msg == 'hi') {
-            replyMsg = "你好！";
+            event.reply("你好！").then(function (data) {
+                // success
+                console.log(event);
+            }).catch(function (error) {
+                // error
+                console.log('error:' + error);
+            });
         };
         // case 'hi':
         //     event.reply()
