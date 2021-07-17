@@ -40,7 +40,11 @@ bot.on('message', function (event) {
     }
 });
 
-await context.send([{
+const client = new line.Client({
+    channelAccessToken: '<channel access token>'
+});
+
+const message = {
     "type": "bubble",
     "hero": {
         "type": "image",
@@ -101,7 +105,13 @@ await context.send([{
         ],
         "flex": 0
     }
-}]);
+};
+
+client.pushMessage('<to>',message).then(() =>{
+    console.log("success")
+}).catch((err)=>{
+    console.log(err)
+});
 
 app.post('/', linebotParser);
 
