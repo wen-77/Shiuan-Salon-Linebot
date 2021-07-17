@@ -39,6 +39,70 @@ bot.on('message', function (event) {
             event.reply('不好意思，現在客服人員不在線上！')
     }
 });
+
+await context.send([{
+    "type": "bubble",
+    "hero": {
+        "type": "image",
+        "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+        "size": "full",
+        "aspectRatio": "20:13",
+        "aspectMode": "cover",
+        "action": {
+            "type": "uri",
+            "uri": "http://linecorp.com/"
+        }
+    },
+    "body": {
+        "type": "box",
+        "layout": "vertical",
+        "contents": [{
+            "type": "text",
+            "text": "Shiuan Salon",
+            "weight": "bold",
+            "size": "xl"
+        }]
+    },
+    "footer": {
+        "type": "box",
+        "layout": "vertical",
+        "spacing": "sm",
+        "contents": [{
+                "type": "button",
+                "style": "link",
+                "height": "sm",
+                "action": {
+                    "type": "message",
+                    "label": "CALL",
+                    "text": "0228160809"
+                }
+            },
+            {
+                "type": "button",
+                "style": "link",
+                "height": "sm",
+                "action": {
+                    "type": "uri",
+                    "label": "WEBSITE",
+                    "uri": "https://linecorp.com"
+                }
+            },
+            {
+                "type": "button",
+                "style": "secondary",
+                "height": "sm",
+                "action": {
+                    "type": "postback",
+                    "label": "預約",
+                    "data": "hello",
+                    "displayText": "我要預約"
+                }
+            }
+        ],
+        "flex": 0
+    }
+}]);
+
 app.post('/', linebotParser);
 
 app.listen(process.env.PORT || 8080, () => {
