@@ -20,10 +20,13 @@ bot.on('message', function (event) {
         case '你好':
             event.reply('你好，請問需要什麼？')
             break
-        case 'hi' || 'hello':
+        case 'hi':
+            event.reply('hello')
+            break
+        case 'hello':
             event.reply('hi')
             break
-        case '有人嗎？':
+        case '有人嗎':
             event.reply('請敘述您的問題，謝謝。')
             break
         case '請問':
